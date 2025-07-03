@@ -1,0 +1,839 @@
+:: StoryTitle
+CC
+
+
+:: StoryData
+{
+  "ifid": "126A610A-F227-439B-A688-C6C82BC50AD2",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "First",
+  "zoom": 1
+}
+
+
+:: First {"position":"700,275","size":"100,100"}
+<!-- Load haunted, antique-style font -->
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+<!-- Fullscreen black background -->
+<div style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+
+  <!-- Title -->
+  <h1 style="
+    font-family: 'IM Fell English SC', serif;
+    font-size: 4.5rem;
+    color: #eee;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+    z-index: 1;
+    margin-bottom: 3rem;
+    user-select: none;
+    letter-spacing: 1px;
+  ">
+    The Last Descent
+  </h1>
+</div>
+
+<!-- Background ambient audio (your custom sound) -->
+<audio autoplay loop>
+  <source src="https://filip-fernandes.github.io/audio-repo/11L-ominous_chillisoundt-1751415720647.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Start button -->
+<div id="decision-container" style="
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 2;
+">
+  <tw-link style="
+    font-family: 'Arial', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ddd;
+    background: rgba(20, 20, 20, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 12px 32px;
+    border: 2px solid #555;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(40,40,40,0.85)'; this.style.color='#fff'; this.style.transform='scale(1.05)'; this.style.borderColor='#aaa';"
+  onmouseout="this.style.background='rgba(20,20,20,0.75)'; this.style.color='#ddd'; this.style.transform='scale(1)'; this.style.borderColor='#555';">
+    [[Start->Start]]
+  </tw-link>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("decision-container").style.opacity = 1;
+  }, 4000);
+</script>
+
+
+
+:: Start {"position":"762.5,400","size":"100,100"}
+<!-- Fullscreen dark background + image -->
+<div style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+  <img
+    src="https://i.imgur.com/mDhiuWg.jpg"
+    alt="Cena"
+    style="
+      height: 100vh;
+      width: auto;
+      display: block;
+    "
+  >
+</div>
+
+<!-- Background ambient audio -->
+<audio autoplay loop>
+  <source src="https://www.orangefreesounds.com/wp-content/uploads/2019/07/Night-nature-sounds.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Decision button (initially hidden, fades in after 4s) -->
+<div id="decision-container" style="
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 1;
+">
+  <tw-link style="
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ddd;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 12px 28px;
+    border: 1.5px solid #555;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(40,40,40,0.85)'; this.style.color='#fff'; this.style.transform='scale(1.05)'; this.style.borderColor='#aaa';"
+  onmouseout="this.style.background='rgba(20,20,20,0.7)'; this.style.color='#ddd'; this.style.transform='scale(1)'; this.style.borderColor='#555';">
+    [[Check the house->house]]
+  </tw-link>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("decision-container").style.opacity = 1;
+  }, 4000);
+</script>
+
+
+:: cellar {"position":"887.5,900","size":"100,100"}
+<!-- Fullscreen black background -->
+<div id="bg-container" style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+  <!-- Basement image will be added via JS -->
+</div>
+
+<!-- Audio: heavy trapdoor + ominous ambience -->
+<audio id="trapdoor" preload="auto" src="https://filip-fernandes.github.io/audio-repo/11L-a_big_heavy_creaky_a-1751385917945.mp3"></audio>
+<audio id="ambience" preload="auto" loop src="https://filip-fernandes.github.io/audio-repo/11L-ominous_ambient_soun-1751395278897.mp3"></audio>
+
+<!-- Decision button (fades in later) -->
+<div id="decision-container" style="
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 1;
+">
+  <tw-link style="
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ddd;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 12px 28px;
+    border: 1.5px solid #555;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(40,40,40,0.85)'; this.style.color='#fff'; this.style.transform='scale(1.05)'; this.style.borderColor='#aaa';"
+  onmouseout="this.style.background='rgba(20,20,20,0.7)'; this.style.color='#ddd'; this.style.transform='scale(1)'; this.style.borderColor='#555';">
+    [[Look around->lookaround]]
+  </tw-link>
+</div>
+
+<script>
+  const trapdoor = document.getElementById('trapdoor');
+  const ambience = document.getElementById('ambience');
+  const bgContainer = document.getElementById('bg-container');
+  const decisionContainer = document.getElementById('decision-container');
+
+  // 1. Play trapdoor sound immediately
+  trapdoor.play();
+
+  // 2. After 3s, reveal basement image + start ambience
+  setTimeout(() => {
+    // Insert image
+    const img = document.createElement('img');
+    img.src = 'https://filip-fernandes.github.io/audio-repo/Gemini_Generated_Image_rop62jrop62jrop6.png';
+    img.alt = 'Basement';
+    img.style.cssText = `
+      height: 100vh;
+      width: auto;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      user-select: none;
+    `;
+    bgContainer.appendChild(img);
+
+    // Start ambience with fade-in
+    ambience.volume = 0;
+    ambience.play();
+    let vol = 0;
+    const fade = setInterval(() => {
+      if (vol < 1) {
+        vol += 0.05;
+        ambience.volume = Math.min(vol, 1);
+      } else {
+        clearInterval(fade);
+      }
+    }, 200);
+  }, 3000);
+
+  // 3. Reveal decision button at 7s
+  setTimeout(() => {
+    decisionContainer.style.opacity = 1;
+  }, 7000);
+</script>
+
+
+
+:: house {"position":"887.5,525","size":"100,100"}
+https://www.orangefreesounds.com/wp-content/uplo
+
+
+:: house {"position":"887.5,525","size":"100,100"}
+<!-- Background black fullscreen container -->
+<div id="bg-container" style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+  <!-- Initially empty, image will appear after sounds -->
+</div>
+
+<!-- Audio elements, both hidden -->
+<audio id="audio1" preload="auto" src="https://orangefreesounds.com/wp-content/uploads/2025/04/Sharp-gravel-footsteps-sound-effect.mp3"></audio>
+<audio id="audio2" preload="auto" src="https://www.orangefreesounds.com/wp-content/uploads/2020/07/Footsteps-on-wooden-floor.mp3"></audio>
+
+<!-- Decision button (initially hidden, fades in after 9s) -->
+<div id="decision-container" style="
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 1;
+">
+  <tw-link style="
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ddd;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 12px 28px;
+    border: 1.5px solid #555;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(40,40,40,0.85)'; this.style.color='#fff'; this.style.transform='scale(1.05)'; this.style.borderColor='#aaa';"
+  onmouseout="this.style.background='rgba(20,20,20,0.7)'; this.style.color='#ddd'; this.style.transform='scale(1)'; this.style.borderColor='#555';">
+    [[Enter house->house2]]
+  </tw-link>
+</div>
+
+<script>
+  const audio1 = document.getElementById('audio1');
+  const audio2 = document.getElementById('audio2');
+  const bgContainer = document.getElementById('bg-container');
+  const decisionContainer = document.getElementById('decision-container');
+
+  // Play first audio immediately
+  audio1.play();
+
+  // After 2 seconds, stop audio1 and play audio2
+  setTimeout(() => {
+    audio1.pause();
+    audio1.currentTime = 0;
+    audio2.play();
+  }, 2000);
+
+  // After 8 seconds (total), stop audio2 and show image
+  setTimeout(() => {
+    audio2.pause();
+    audio2.currentTime = 0;
+    const img = document.createElement('img');
+    img.src = 'https://i.imgur.com/ZGFygKE.jpg';
+    img.alt = 'House Entrance';
+    img.style.cssText = `
+      height: 100vh;
+      width: auto;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      user-select: none;
+    `;
+    bgContainer.appendChild(img);
+  }, 8000);
+
+  // After 9 seconds, fade in the decision button
+  setTimeout(() => {
+    decisionContainer.style.opacity = 1;
+  }, 9000);
+</script>
+
+
+:: house2 {"position":"887.5,650","size":"100,100"}
+<!-- Fullscreen dark background (imagem será inserida depois) -->
+<div id="bg-container" style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+  <!-- Imagem será inserida via script -->
+</div>
+
+<!-- Áudios em sequência -->
+<audio id="audio1" preload="auto">
+  <source src="https://orangefreesounds.com/wp-content/uploads/2023/09/Creepy-footsteps-sound-effect.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="audio2" preload="auto">
+  <source src="https://www.orangefreesounds.com/wp-content/uploads/2018/04/Wooden-door-opening-sound-effect.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="audio3" preload="auto">
+  <source src="https://orangefreesounds.com/wp-content/uploads/2024/09/Haunted-house-sound-effect.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Botão de decisão (inicialmente escondido) -->
+<div id="decision-container" style="
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 1;
+">
+  <tw-link style="
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ddd;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 12px 28px;
+    border: 1.5px solid #555;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(40,40,40,0.85)'; this.style.color='#fff'; this.style.transform='scale(1.05)'; this.style.borderColor='#aaa';"
+  onmouseout="this.style.background='rgba(20,20,20,0.7)'; this.style.color='#ddd'; this.style.transform='scale(1)'; this.style.borderColor='#555';">
+    [[Inspect bloodstained rug->tapete]]
+  </tw-link>
+</div>
+
+<script>
+  const audio1 = document.getElementById("audio1");
+  const audio2 = document.getElementById("audio2");
+  const audio3 = document.getElementById("audio3");
+  const bgContainer = document.getElementById("bg-container");
+  const decisionContainer = document.getElementById("decision-container");
+
+  // Toca passos assustadores
+  audio1.play();
+
+  // Após 3s, parar audio1 e tocar som de porta
+  setTimeout(() => {
+    audio1.pause();
+    audio1.currentTime = 0;
+    audio2.play();
+  }, 3000);
+
+  // Após 3s + tempo da porta (~2s), tocar som da casa assombrada
+  setTimeout(() => {
+    audio2.pause();
+    audio2.currentTime = 0;
+    audio3.volume = 1;
+    audio3.play();
+
+    // Adiciona imagem da casa
+    const img = document.createElement('img');
+    img.src = 'https://i.imgur.com/GSAYIqq.png';
+    img.alt = 'Cena';
+    img.style.cssText = `
+      height: 100vh;
+      width: auto;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      user-select: none;
+    `;
+    bgContainer.appendChild(img);
+
+    // Fade-out do áudio após 5s
+    setTimeout(() => {
+      let fadeInterval = setInterval(() => {
+        if (audio3.volume > 0.05) {
+          audio3.volume -= 0.05;
+        } else {
+          audio3.volume = 0;
+          audio3.pause();
+          clearInterval(fadeInterval);
+        }
+      }, 200);
+    }, 5000);
+
+    // Aparecer botão 2s após imagem
+    setTimeout(() => {
+      decisionContainer.style.opacity = 1;
+    }, 4000);
+
+  }, 5000); // 3s + 2s porta
+</script>
+
+
+:: lookaround {"position":"887.5,1025","size":"100,100"}
+<!-- Black background container -->
+<div id="bg-container" style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+  <!-- Basement image inserted later -->
+</div>
+
+<!-- Fullscreen video overlay (hidden initially) -->
+<video id="overlay-video" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 2;
+  display: none;
+" preload="auto" src="https://filip-fernandes.github.io/audio-repo/jumpscare.mp4"></video>
+
+<!-- YOU DIED overlay with static and restart button -->
+<div id="you-died" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  color: red;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 4;
+  pointer-events: none;
+  background-image: repeating-radial-gradient(#000000 0%, #111111 2%, #000000 4%);
+  animation: staticFlicker 0.25s infinite;
+">
+  <div>YOU DIED</div>
+  <tw-link style="
+    margin-top: 40px;
+    font-size: 1.2rem;
+    padding: 10px 22px;
+    color: white;
+    background: rgba(40, 40, 40, 0.8);
+    border: 1px solid #555;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 5;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+  " 
+  onmouseover="this.style.background='rgba(80,80,80,0.9)';"
+  onmouseout="this.style.background='rgba(40,40,40,0.8)';">
+    [[Play Again->First]]
+  </tw-link>
+</div>
+
+<!-- Audio elements -->
+<audio id="stairs" preload="auto" src="https://example.com/descending-stairs.mp3"></audio>
+<audio id="introAmbience" preload="auto" src="https://filip-fernandes.github.io/audio-repo/11L-loud_and_very_slow_f-1751402780332.mp3"></audio>
+<audio id="preRevealFlicker" preload="auto" src="https://filip-fernandes.github.io/audio-repo/11L-flashlight_flickerin-1751399818341.mp3"></audio>
+
+<audio id="flicker1" src="https://filip-fernandes.github.io/audio-repo/11L-flash_light_failing-1751399870752.mp3"></audio>
+<audio id="flicker2" src="https://filip-fernandes.github.io/audio-repo/11L-flashlight_deffect-1751399881220.mp3"></audio>
+<audio id="flicker3" src="https://filip-fernandes.github.io/audio-repo/11L-flashlight_flickerin-1751399818341.mp3"></audio>
+<audio id="blackout" src="https://filip-fernandes.github.io/audio-repo/11L-light_bulb_failing_l-1751400113283.mp3"></audio>
+
+<script>
+  const stairs = document.getElementById('stairs');
+  const introAmbience = document.getElementById('introAmbience');
+  const preRevealFlicker = document.getElementById('preRevealFlicker');
+
+  const bgContainer = document.getElementById('bg-container');
+  const overlayVideo = document.getElementById('overlay-video');
+  const youDied = document.getElementById('you-died');
+
+  const flicker1 = document.getElementById('flicker1');
+  const flicker2 = document.getElementById('flicker2');
+  const flicker3 = document.getElementById('flicker3');
+  const blackout = document.getElementById('blackout');
+
+  // Play intro sounds
+  stairs.play();
+  introAmbience.play();
+
+  setTimeout(() => {
+    preRevealFlicker.play();
+  }, 4800);
+
+  // Show image after 5s blackout
+  setTimeout(() => {
+    const img = document.createElement('img');
+    img.src = 'https://filip-fernandes.github.io/audio-repo/ChatGPT%20Image%20Jul%201,%202025,%2004_42_43%20PM.png';
+    img.alt = 'Basement';
+    img.id = 'basement-img';
+    img.style.cssText = `
+      height: 100vh;
+      width: auto;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      user-select: none;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    `;
+    bgContainer.appendChild(img);
+
+    setTimeout(() => {
+      const flickerTimes = [
+        {sound: flicker1, time: 0},
+        {sound: flicker2, time: 1300},
+        {sound: flicker3, time: 2600}
+      ];
+
+      flickerTimes.forEach(({sound, time}) => {
+        setTimeout(() => sound.play(), time);
+        setTimeout(() => { img.style.opacity = '0'; }, time + 200);
+        setTimeout(() => { img.style.opacity = '1'; }, time + 700);
+      });
+
+      const finalBlackoutTime = 3100;
+      setTimeout(() => {
+        blackout.play();
+        setTimeout(() => { img.style.opacity = '0'; }, 250);
+      }, finalBlackoutTime);
+
+      // Show jumpscare
+      setTimeout(() => {
+        overlayVideo.style.display = 'block';
+        overlayVideo.play();
+
+        overlayVideo.onended = () => {
+          youDied.style.opacity = 1;
+        };
+        setTimeout(() => {
+          if (overlayVideo.paused) {
+            youDied.style.opacity = 1;
+          }
+        }, 7000);
+      }, finalBlackoutTime + 1250);
+
+    }, 2000);
+  }, 5000);
+</script>
+
+<!-- Static flicker animation -->
+<style>
+@keyframes staticFlicker {
+  0% { background-position: 0 0; }
+  25% { background-position: 5px -5px; }
+  50% { background-position: -5px 5px; }
+  75% { background-position: 3px -3px; }
+  100% { background-position: 0 0; }
+}
+</style>
+
+
+
+:: tapete {"position":"887.5,775","size":"100,100"}
+<!-- Background black fullscreen container --> 
+<div id="bg-container" style=" 
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+">
+  <!-- Image will be inserted via JS -->
+</div>
+
+<!-- Audio elements -->
+<audio id="audio1" preload="auto" src="https://www.orangefreesounds.com/wp-content/uploads/2020/07/Footsteps-on-wooden-floor.mp3"></audio>
+<audio id="audioMuffled" preload="auto" src="https://filip-fernandes.github.io/audio-repo/11L-a_muffled_loud_rug_b-1751385250193.mp3"></audio>
+<audio id="audio2" preload="auto">
+  <source src="https://orangefreesounds.com/wp-content/uploads/2023/11/Sinister-soundscape-sound-effect.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Decision button (initially hidden, fades in after 8s) -->
+<div id="decision-container" style="
+  position: fixed;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 2s ease;
+  z-index: 1;
+">
+  <tw-link style="
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ddd;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 12px 28px;
+    border: 1.5px solid #555;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    user-select: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  "
+  onmouseover="this.style.background='rgba(40,40,40,0.85)'; this.style.color='#fff'; this.style.transform='scale(1.05)'; this.style.borderColor='#aaa';"
+  onmouseout="this.style.background='rgba(20,20,20,0.7)'; this.style.color='#ddd'; this.style.transform='scale(1)'; this.style.borderColor='#555';">
+    [[Enter basement->cellar]]
+  </tw-link>
+</div>
+
+<script>
+  const audio1 = document.getElementById('audio1');
+  const audioMuffled = document.getElementById('audioMuffled');
+  const audio2 = document.getElementById('audio2');
+  const bgContainer = document.getElementById('bg-container');
+  const decisionContainer = document.getElementById('decision-container');
+
+  // 1. Play footsteps
+  audio1.play();
+
+  // 2. After 2s, stop footsteps, play muffled rug audio
+  setTimeout(() => {
+    audio1.pause();
+    audio1.currentTime = 0;
+    audioMuffled.play();
+  }, 2000);
+
+  // 3. After ~3.5s (1.5s rug), start sinister sound + image + fade
+  setTimeout(() => {
+    // Insert image
+    const img = document.createElement('img');
+    img.src = 'https://i.imgur.com/pDbfB7N.jpg';
+    img.alt = 'Cellar entrance';
+    img.style.cssText = `
+      height: 100vh;
+      width: auto;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      user-select: none;
+    `;
+    bgContainer.appendChild(img);
+
+    // Start sinister with fade-in
+    audio2.volume = 0;
+    audio2.play();
+    let volume = 0;
+    const fadeIn = setInterval(() => {
+      if (volume < 1) {
+        volume += 0.05;
+        audio2.volume = Math.min(volume, 1);
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 200);
+  }, 3500);
+
+  // 4. Button fades in after ~8s
+  setTimeout(() => {
+    decisionContainer.style.opacity = 1;
+  }, 8000);
+</script>
